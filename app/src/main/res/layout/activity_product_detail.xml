@@ -7,7 +7,7 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="220dp"
         android:background="#F4F4F4"
         android:padding="4dp"
@@ -23,7 +23,8 @@
         android:layout_marginTop="8dp"
         android:text="@string/title"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager" />
 
@@ -34,7 +35,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/price"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/txtTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
@@ -46,11 +47,12 @@
         android:drawablePadding="4dp"
         android:gravity="center"
         android:text="@string/rating"
+        android:textColor="@color/black"
         android:textSize="12sp"
+        app:drawableStartCompat="@drawable/ic_rating"
         app:layout_constraintBottom_toBottomOf="@+id/txtPrice"
         app:layout_constraintStart_toEndOf="@+id/txtPrice"
-        app:layout_constraintTop_toTopOf="@+id/txtPrice"
-        app:drawableStartCompat="@drawable/ic_rating" />
+        app:layout_constraintTop_toTopOf="@+id/txtPrice" />
 
     <TextView
         android:id="@+id/txtCategory"
@@ -69,6 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/category"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/txtTitle"
         app:layout_constraintTop_toTopOf="@+id/txtCategory" />
 
@@ -89,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/description"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/txtTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtCategory" />
 
