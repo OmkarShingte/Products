@@ -7,7 +7,6 @@ import com.example.products.models.ProductModel
 
 class ProductRepository(private val productService: ProductService) {
 
-//    private var productData = MutableLiveData<List<ProductModel>>()
     private var productData = MutableLiveData<ProductModel>()
     val products: LiveData<ProductModel>
         get() = productData
@@ -16,6 +15,5 @@ class ProductRepository(private val productService: ProductService) {
         val result = productService.getProductsService()
         if (result?.body() != null)
             productData.postValue(result.body())
-//        productData.postValue(result.body())
     }
 }

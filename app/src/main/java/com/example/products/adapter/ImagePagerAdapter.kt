@@ -5,7 +5,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 
 
-class ViewPagerAdapter(
+class ImagePagerAdapter(
     context: android.content.Context,
     mImageIdsa: ArrayList<String>
 ) : PagerAdapter() {
@@ -16,7 +16,7 @@ class ViewPagerAdapter(
         mContext = context
     }
 
-    override fun instantiateItem(container: ViewGroup, position: kotlin.Int): kotlin.Any {
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val imageView: android.widget.ImageView = android.widget.ImageView(mContext)
         Glide.with(mContext).load(mImageIds.get(position)).into(imageView)
         container.addView(imageView)
@@ -25,20 +25,20 @@ class ViewPagerAdapter(
 
     override fun destroyItem(
         container: ViewGroup,
-        position: kotlin.Int,
-        `object`: kotlin.Any
+        position: Int,
+        `object`: Any
     ) {
         container.removeView(`object` as android.widget.ImageView?)
     }
 
-    override fun getCount(): kotlin.Int {
+    override fun getCount(): Int {
         return mImageIds.size
     }
 
     override fun isViewFromObject(
         view: android.view.View,
-        `object`: kotlin.Any
-    ): kotlin.Boolean {
+        `object`: Any
+    ): Boolean {
         return view === `object`
     }
 }

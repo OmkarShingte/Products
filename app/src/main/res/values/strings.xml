@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Products</string>
+    <string name="product_list">Product List</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="category">Category :</string>
+    <string name="description">Description :</string>
+    <string name="rating">Rating</string>
+    <string name="see_more">See more</string>
+    <string name="brand_name">Brand Name</string>
 </resources>

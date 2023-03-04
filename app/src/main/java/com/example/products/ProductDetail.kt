@@ -1,31 +1,41 @@
 package com.example.products
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.products.adapter.ViewPagerAdapter
+import com.example.products.adapter.ImagePagerAdapter
 import com.example.products.models.Product
 import kotlinx.android.synthetic.main.activity_product_detail.*
 
 
-class ProductDetail : AppCompatActivity() {
+class ProductDetail : AppCompatActivity(), View.OnClickListener {
 
-    private var mViewPagerAdapter: ViewPagerAdapter? = null
+    private var mViewPagerAdapter: ImagePagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_detail)
+        button.setOnClickListener(this)
 
         val user = intent.getSerializableExtra("prd") as Product
 
+        txtDescription.text = user.description
+        txtCategory.text = user.category
+        txtRating.text = user.rating.toString()
+        txtPrice.text = "₹ "+user.price.toString()
+        txtTitle.text = user.title
 
-        textView9.text = user.description
-        textView8.text = user.category
-        textView7.text = user.rating.toString()
-        textView6.text = "₹ "+user.price.toString()
-        textView5.text = user.title
-
-
-        mViewPagerAdapter = ViewPagerAdapter(this, user.images as ArrayList<String>);
+        mViewPagerAdapter = ImagePagerAdapter(this, user.images as ArrayList<String>);
         viewPager.adapter = mViewPagerAdapter
+    }
+
+    override fun onClick(view: View?) {
+        when(view!!.id){
+            R.id.button->onBackPressed()
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

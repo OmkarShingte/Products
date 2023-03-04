@@ -4,9 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.products.repository.ProductRepository
 
-class ProductViewModelFactory(val productRepository: ProductRepository) : ViewModelProvider.Factory  {
+class ProductViewModelFactory(private val productRepository: ProductRepository) :
+    ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return ProductViewModel(productRepository) as T  //super.create(modelClass)
+        return ProductViewModel(productRepository) as T
     }
 }

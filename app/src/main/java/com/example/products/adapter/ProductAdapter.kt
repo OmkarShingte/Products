@@ -61,10 +61,10 @@ class ProductAdapter(
         val product = groupList[mViewHolder.adapterPosition]
         val item = mViewHolder.itemView
 
-        item.textView.text = product.title
-        item.textView2.text = "₹ "+product.price.toString()
-        item.textView3.text = product.brand
-        item.textView4.text = product.category
+        item.txtName.text = product.title
+        item.txtPrice.text = "₹ "+product.price.toString()
+        item.txtBrand.text = product.brand
+        item.txtCategory.text = product.category
         Glide.with(mContext).load(product.thumbnail).into(item.imageView)
         item.conProduct.setOnClickListener {
             listener.onClickListener(product, position, "detail")
